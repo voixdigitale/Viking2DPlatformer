@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -63,7 +63,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_body
+    path: dwarf_body
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -88,13 +88,22 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_footL
+    path: dwarf_footL
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: {x: 0, y: 0, z: -6.519}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.08
+        value: {x: 0, y: 0, z: -30.349}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -113,7 +122,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_footR
+    path: dwarf_footR
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -138,7 +147,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -163,7 +172,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_head
+    path: dwarf_head
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -189,7 +198,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -214,7 +223,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_body
+    path: dwarf_body
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -239,7 +248,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_footL
+    path: dwarf_footL
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -255,8 +264,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.04
         value: {x: -0.01, y: -1.37, z: 0}
-        inSlope: {x: 0, y: -3.1999998, z: 0}
-        outSlope: {x: 0, y: -3.1999998, z: 0}
+        inSlope: {x: 0, y: -7.999999, z: 0}
+        outSlope: {x: 0, y: -7.999999, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.08
+        value: {x: -0.166, y: -2.128, z: 0}
+        inSlope: {x: -2.6249995, y: -2.5499992, z: 0}
+        outSlope: {x: -2.6249995, y: -2.5499992, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -273,7 +291,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_footR
+    path: dwarf_footR
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -298,7 +316,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -323,7 +341,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Model/dwarf_head
+    path: dwarf_head
   m_ScaleCurves: []
   m_FloatCurves:
   - serializedVersion: 2
@@ -352,7 +370,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -365,7 +383,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2910774892
+      path: 3651712366
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -374,7 +392,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3604103597
+      path: 1458594740
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -383,7 +401,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1235408974
+      path: 759780012
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -392,7 +410,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3014518061
+      path: 3611717583
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -401,7 +419,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 270941169
+      path: 4267478158
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -410,7 +428,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2861153411
+      path: 715890330
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -419,7 +437,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2910774892
+      path: 3651712366
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -428,7 +446,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3604103597
+      path: 1458594740
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -437,7 +455,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1235408974
+      path: 759780012
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -446,7 +464,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 270941169
+      path: 3611717583
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -455,7 +473,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2861153411
+      path: 4267478158
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -464,20 +482,20 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3014518061
+      path: 715890330
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3611717583
       attribute: 555744692
       script: {fileID: 0}
       typeID: 212
       customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 3014518061
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
@@ -529,7 +547,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -559,7 +577,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -589,7 +607,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -619,10 +637,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -649,10 +667,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -679,10 +697,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Model/dwarf_back_handL
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -709,7 +727,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Model/dwarf_body
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -739,7 +757,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Model/dwarf_body
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -769,7 +787,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Model/dwarf_body
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -799,10 +817,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Model/dwarf_body
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -829,10 +847,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Model/dwarf_body
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -859,10 +877,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Model/dwarf_body
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -889,7 +907,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Model/dwarf_footL
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -919,7 +937,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Model/dwarf_footL
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -949,7 +967,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Model/dwarf_footL
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -979,10 +997,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Model/dwarf_footL
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1009,10 +1027,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Model/dwarf_footL
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1039,10 +1057,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Model/dwarf_footL
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1066,6 +1084,15 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.08
+        value: -0.166
+        inSlope: -2.6249995
+        outSlope: -2.6249995
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 0.2
         value: -0.42999995
         inSlope: 0
@@ -1078,7 +1105,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1098,8 +1125,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.04
         value: -1.37
-        inSlope: -3.1999998
-        outSlope: -3.1999998
+        inSlope: -7.999999
+        outSlope: -7.999999
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.08
+        value: -2.128
+        inSlope: -2.5499992
+        outSlope: -2.5499992
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1117,7 +1153,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1136,6 +1172,15 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.04
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.08
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1156,7 +1201,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1166,6 +1211,15 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.08
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1186,16 +1240,25 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.08
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1216,10 +1279,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1227,6 +1290,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -6.519
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.08
+        value: -30.349
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1246,10 +1318,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1276,7 +1348,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: Model/dwarf_footR
+    path: dwarf_footR
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -1306,7 +1378,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1336,7 +1408,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1366,7 +1438,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1396,10 +1468,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1426,10 +1498,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1456,10 +1528,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Model/dwarf_front_handR
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1486,7 +1558,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Model/dwarf_head
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1516,7 +1588,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Model/dwarf_head
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1546,7 +1618,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Model/dwarf_head
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1576,10 +1648,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Model/dwarf_head
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1606,10 +1678,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Model/dwarf_head
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -1636,10 +1708,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Model/dwarf_head
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   m_EulerEditorCurves:
   - serializedVersion: 2
     curve:
@@ -1649,7 +1721,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Model/dwarf_footR
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1661,7 +1733,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Model/dwarf_footR
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1673,7 +1745,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Model/dwarf_footR
+    path: dwarf_footL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1685,7 +1757,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Model/dwarf_body
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1697,7 +1769,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Model/dwarf_body
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1709,7 +1781,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Model/dwarf_body
+    path: dwarf_back_handL
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1721,7 +1793,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Model/dwarf_footL
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1733,7 +1805,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Model/dwarf_footL
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1745,7 +1817,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Model/dwarf_footL
+    path: dwarf_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1757,7 +1829,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Model/dwarf_front_handR
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1769,7 +1841,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Model/dwarf_front_handR
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1781,7 +1853,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Model/dwarf_front_handR
+    path: dwarf_head
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1793,7 +1865,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Model/dwarf_back_handL
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1805,7 +1877,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Model/dwarf_back_handL
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1817,7 +1889,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Model/dwarf_back_handL
+    path: dwarf_front_handR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1829,7 +1901,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Model/dwarf_head
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1841,7 +1913,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Model/dwarf_head
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1853,7 +1925,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Model/dwarf_head
+    path: dwarf_footR
     classID: 4
     script: {fileID: 0}
     flags: 0
