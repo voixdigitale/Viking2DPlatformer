@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Screen Space  Canvas
+    uniqueID: 3539050515
+    locked: 0
   - name: Background
     uniqueID: 3511108217
     locked: 0

@@ -35,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("isJumping", true);
         }
 
+
+        if (Input.GetKeyDown(KeyCode.Keypad0) && _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Smash") {
+            _animator.SetTrigger("Attack");
+        }
+
         SpriteOrientation();
         GroundDetection();
 
