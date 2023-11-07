@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f8bd9da91f4b37049b1312a4792881d2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_PreviewGrid: {instanceID: 0}
+  - any: {fileID: 2800000, guid: 646df060cacc18e4386fc1d3ae84581e, type: 3}
+  - specified: {fileID: 2800000, guid: f1f75b527e514744c9f9a401b5d0e290, type: 3}
+  - empty: {fileID: 2800000, guid: 78f4f1289777d924993917dfbb7c1403, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

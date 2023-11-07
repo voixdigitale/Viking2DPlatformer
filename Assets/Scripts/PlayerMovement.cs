@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _fallMultiplier;
+    [SerializeField] private float _gravityDelay;
     [SerializeField] private LayerMask _groundLayerMask;
     [SerializeField] private Transform _floorDetector;
     [SerializeField] private float _groundDetectorRadius;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _direction;
     private bool _isJumping;
     private bool _isGrounded = true;
+    private float _timeInAir = 0;
 
     private void Awake() {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         SpriteOrientation();
         GroundDetection();
+        GravityDelay();
 
         _animator.SetFloat("MoveSpeedX", Mathf.Abs(_direction.x));
     }
@@ -75,24 +78,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _direction.y = _rb2d.velocity.y;
-
         if (_isJumping)
         {
             _isJumping = false;
+            _timeInAir = 0;
             _animator.SetBool("isJumping", false);
-            _direction.y = _jumpHeight * Time.fixedDeltaTime;
+            _rb2d.AddForce(Vector2.up * _jumpHeight, ForceMode2D.Impulse);
         }
 
-        if (_rb2d.velocity.y < 0)
-        {
-            _rb2d.gravityScale = _fallMultiplier;
-        }
-        else
-        {
-            _rb2d.gravityScale = 1f;
-        }
-
+        _direction.y = _rb2d.velocity.y;
         _rb2d.velocity = _direction;
+        ExtraGravity();
+    }
+
+    private void GravityDelay() {
+        if (!_isGrounded) {
+            _timeInAir += Time.deltaTime;
+        } else {
+            _timeInAir = 0f;
+        }
+    }
+
+    private void ExtraGravity() {
+        if (_timeInAir > _gravityDelay) {
+            _rb2d.AddForce(new Vector2(0f, -_fallMultiplier * Time.deltaTime));
+        }
     }
 }
