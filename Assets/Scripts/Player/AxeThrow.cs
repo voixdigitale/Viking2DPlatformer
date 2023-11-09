@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
 using UnityEngine.Timeline;
+using UnityEngine.XR;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 
 public class AxeThrow : MonoBehaviour
 {
@@ -13,6 +16,8 @@ public class AxeThrow : MonoBehaviour
     [SerializeField] Transform _hand;
     [SerializeField] float _strength;
     [SerializeField] float _returnDelay = 1f;
+    [SerializeField] float _returnSpeed = 1f;
+    [SerializeField] float _snapDistance = .3f;
 
     [Header("Prediction Trajectoire")]
     [SerializeField, Range(10, 100), Tooltip("La quantité max de points pour le LineRenderer")]
@@ -24,6 +29,7 @@ public class AxeThrow : MonoBehaviour
 
     [Header("GameObjects")]
     [SerializeField] Light2D _axeLight;
+    [SerializeField] Transform _model;
 
     private LineRenderer _trajectoryLine;
 
@@ -33,6 +39,7 @@ public class AxeThrow : MonoBehaviour
     private bool _isAiming;
     private bool _hasAxe;
     private Vector2 _aimDirection;
+    private Tweener _tweener;
 
     private void Awake() {
         _axeRb = _axe.GetComponent<Rigidbody2D>();
@@ -63,7 +70,7 @@ public class AxeThrow : MonoBehaviour
         {
             _isAiming = true;
             SetTrajectoryVisible(true);
-            _aimDirection = new Vector2(direction.x , direction.y);
+            _aimDirection = new Vector2(direction.x , direction.y) == Vector2.zero ? new Vector2(_model.localScale.x, 0.5f) : new Vector2(direction.x, direction.y);
         }
     }
     public void Throw() {
@@ -79,8 +86,10 @@ public class AxeThrow : MonoBehaviour
 
     private IEnumerator AxeReturnRoutine() {
         yield return new WaitForSeconds(_returnDelay);
-        
-        _axe.DOMove((Vector2)_hand.position + _originalPos, 1f).SetEase(Ease.InExpo).OnComplete(() => {
+
+        Vector2 target = (Vector2) _hand.position + _originalPos;
+    
+        _axe.DOMoveInTargetLocalSpace(_hand, _originalPos, _returnSpeed).SetEase(Ease.InOutExpo).OnComplete(() => {
             _axe.SetParent(_hand);
             _axeRb.bodyType = RigidbodyType2D.Kinematic;
             _axe.localPosition = _originalPos;
@@ -90,7 +99,6 @@ public class AxeThrow : MonoBehaviour
             _axeLight.enabled = false;
             _hasAxe = true;
         });
-
     }
 
     public void PredictTrajectory() {

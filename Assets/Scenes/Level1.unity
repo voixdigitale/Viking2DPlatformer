@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &6469654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3964042277659604356, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
+  m_PrefabInstance: {fileID: 2369551133895389230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &54740808
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +970,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.248302, y: -6.328978, z: 0.18836594}
+  m_LocalPosition: {x: 11.1477375, y: -6.351348, z: 0.18836594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29625,8 +29630,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 104414473161151890, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
+      propertyPath: _model
+      value: 
+      objectReference: {fileID: 6469654}
+    - target: {fileID: 104414473161151890, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
       propertyPath: _maxPoints
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 104414473161151890, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
+      propertyPath: _returnDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 104414473161151890, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
+      propertyPath: _returnSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 104414473161151890, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
+      propertyPath: _snapDistance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5381021195585106202, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
       propertyPath: m_SortingOrder
