@@ -14,15 +14,19 @@ public class PlayerInput : MonoBehaviour
     private FrameInput GatherInput() {
         return new FrameInput {
             MoveX = Input.GetAxisRaw("Horizontal"),
+            AimShot = Input.GetAxis("Vertical"),
             Jump = Input.GetButtonDown("Jump"),
-            Attack = Input.GetButtonDown("Fire1")
+            Attack = Input.GetButton("Fire1"),
+            ReleaseAttack = Input.GetButtonUp("Fire1")
         };
     }
 }
 
 public struct FrameInput {
     public float MoveX;
+    public float AimShot;
     public bool Jump;
     public bool Attack;
+    public bool ReleaseAttack;
     public bool Pause;
 }

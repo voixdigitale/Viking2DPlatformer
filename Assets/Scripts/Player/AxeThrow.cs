@@ -7,6 +7,8 @@ using UnityEngine.Timeline;
 
 public class AxeThrow : MonoBehaviour
 {
+    public bool IsAiming() => _isAiming;
+
     [SerializeField] Transform _axe;
     [SerializeField] Transform _hand;
     [SerializeField] float _strength;
@@ -28,6 +30,9 @@ public class AxeThrow : MonoBehaviour
     private Rigidbody2D _axeRb;
     private Vector2 _originalPos;
     private Quaternion _originalRotation;
+    private bool _isAiming;
+    private bool _hasAxe;
+    private Vector2 _aimDirection;
 
     private void Awake() {
         _axeRb = _axe.GetComponent<Rigidbody2D>();
@@ -38,30 +43,44 @@ public class AxeThrow : MonoBehaviour
 
     private void Start() {
         _axeLight.enabled = false;
-        SetTrajectoryVisible(true);
+        _hasAxe = true;
     }
 
     private void Update() {
-        PredictTrajectory();
+        if (_isAiming)
+        {
+            PredictTrajectory();
+        }
     }
 
     public void SetTrajectoryVisible(bool visible) {
         _trajectoryLine.enabled = visible;
     }
 
-    public void  Throw() {
+    public void Aim(Vector2 direction)
+    {
+        if (_hasAxe)
+        {
+            _isAiming = true;
+            SetTrajectoryVisible(true);
+            _aimDirection = new Vector2(direction.x , direction.y);
+        }
+    }
+    public void Throw() {
+        _isAiming = false;
+        _hasAxe = false;
         _axe.SetParent(null);
         _axeLight.enabled = true;
         _axeRb.bodyType = RigidbodyType2D.Dynamic;
-        Vector2 throwDir = new Vector2(_hand.parent.localScale.x, 0f);
-        _axeRb.AddForce(throwDir * _strength, ForceMode2D.Impulse);
+        _axeRb.AddForce(_aimDirection * _strength, ForceMode2D.Impulse);
+        SetTrajectoryVisible(false);
         StartCoroutine(AxeReturnRoutine());
     }
 
     private IEnumerator AxeReturnRoutine() {
         yield return new WaitForSeconds(_returnDelay);
         
-        _axe.DOMove((Vector2) _hand.position + _originalPos, 1f).SetEase(Ease.InExpo).OnComplete(() => {
+        _axe.DOMove((Vector2)_hand.position + _originalPos, 1f).SetEase(Ease.InExpo).OnComplete(() => {
             _axe.SetParent(_hand);
             _axeRb.bodyType = RigidbodyType2D.Kinematic;
             _axe.localPosition = _originalPos;
@@ -69,12 +88,13 @@ public class AxeThrow : MonoBehaviour
             _axeRb.angularVelocity = 0f;
             _axeRb.velocity = Vector2.zero;
             _axeLight.enabled = false;
+            _hasAxe = true;
         });
 
     }
 
     public void PredictTrajectory() {
-        Vector3 velocity = new Vector2(_hand.parent.localScale.x, 0f) * (_strength / _axeRb.mass);
+        Vector3 velocity = _aimDirection * (_strength / _axeRb.mass);
         Vector3 position = _hand.position;
         Vector3 nextPosition;
         float overlap;

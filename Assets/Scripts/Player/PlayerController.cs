@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
         Movement();
         Jumping();
         Attacking();
+        Aiming();
         Throwing();
     }
 
@@ -30,15 +31,20 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Movement() {
-        _movement.SetDirectionX(_frameInput.MoveX);
+        _movement.SetDirectionX(_axeThrow.IsAiming() ? 0 : _frameInput.MoveX);
     }
 
     private void Jumping() {
         if (_frameInput.Jump) _movement.Jump();
     }
 
-    private void Throwing() {
+    private void Aiming() {
         if (_frameInput.Attack)
+            _axeThrow.Aim(new Vector2(_frameInput.MoveX, _frameInput.AimShot));
+    }
+
+    private void Throwing() {
+        if (_frameInput.ReleaseAttack)
             _axeThrow.Throw();
     }
 
