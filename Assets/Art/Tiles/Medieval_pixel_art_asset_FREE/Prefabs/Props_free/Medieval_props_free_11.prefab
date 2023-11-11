@@ -103,7 +103,13 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Turned
       On Level","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Sprite,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"TileMap
+      to Destroy","value":null,"typeHandle":{"Identification":"UnityEngine.Tilemaps.Tilemap,
+      UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Tiles
+      to Destroy","value":{"$content":[{"x":46.0,"y":-5.0},{"x":47.0,"y":-5.0},{"x":48.0,"y":-5.0},{"x":49.0,"y":-5.0},{"x":50.0,"y":-5.0},{"x":51.0,"y":-5.0},{"x":52.0,"y":-5.0},{"x":53.0,"y":-5.0},{"x":54.0,"y":-5.0},{"x":55.0,"y":-5.0}],"$type":"System.Collections.Generic.List`1[[UnityEngine.Vector2,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"typeHandle":{"Identification":"System.Collections.Generic.List`1[[UnityEngine.Vector2,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 21300024, guid: ae3918a914038694d852d0bb81f62473, type: 3}
 --- !u!114 &9172339484039679345
@@ -154,7 +160,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023299545, y: 0.20969528}
+  m_Offset: {x: -0.023864448, y: 0.07449174}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +171,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5516782, y: 1.1902239}
+  m_Size: {x: 0.94169044, y: 0.91981673}
   m_EdgeRadius: 0
 --- !u!1001 &7260240095286648650
 PrefabInstance:

@@ -7,6 +7,13 @@ public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private Vector2 startingPos;
 
+    private PlayerMovement _movement;
+
+    void Awake()
+    {
+        _movement = GetComponent<PlayerMovement>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Damage"))
@@ -17,6 +24,7 @@ public class PlayerRespawn : MonoBehaviour
 
     private void Respawn()
     {
+        _movement.SetPlatformMode(false);
         transform.position = startingPos;
     }
 }

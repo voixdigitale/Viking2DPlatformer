@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.Tilemaps;
 
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _runParticles;
 
     PlayerMovement _movement;
     AxeThrow _axeThrow;
@@ -37,6 +39,17 @@ public class PlayerAnimation : MonoBehaviour
         SetGround(_isGrounded);
         SetJump(_isJumping);
         SetAiming(_isAiming);
+
+        if (Mathf.Abs(_moveSpeedX) > 0 && _isGrounded)
+        {
+            var emission = _runParticles.emission;
+            emission.rateOverDistance = 1;
+        }
+        else
+        {
+            var emission = _runParticles.emission;
+            emission.rateOverDistance = 0;
+        }
     }
 
     private void SetMoveX(float x) {

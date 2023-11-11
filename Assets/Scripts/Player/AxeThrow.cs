@@ -15,9 +15,9 @@ public class AxeThrow : MonoBehaviour
     [SerializeField] Transform _axe;
     [SerializeField] Transform _hand;
     [SerializeField] float _strength;
+    [SerializeField] float _axeTorque;
     [SerializeField] float _returnDelay = 1f;
     [SerializeField] float _returnSpeed = 1f;
-    [SerializeField] float _snapDistance = .3f;
 
     [Header("Prediction Trajectoire")]
     [SerializeField, Range(10, 100), Tooltip("La quantité max de points pour le LineRenderer")]
@@ -80,6 +80,7 @@ public class AxeThrow : MonoBehaviour
         _axeLight.enabled = true;
         _axeRb.bodyType = RigidbodyType2D.Dynamic;
         _axeRb.AddForce(_aimDirection * _strength, ForceMode2D.Impulse);
+        _axeRb.AddTorque(_axeTorque, ForceMode2D.Impulse);
         SetTrajectoryVisible(false);
         StartCoroutine(AxeReturnRoutine());
     }

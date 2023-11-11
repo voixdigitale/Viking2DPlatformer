@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool GetGround() => _isGrounded;
 
     [SerializeField] private float _moveSpeed;
+    [SerializeField] private float _platformMoveSpeed;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _fallMultiplier;
     [SerializeField] private float _gravityDelay;
@@ -25,9 +26,11 @@ public class PlayerMovement : MonoBehaviour
     private bool _isJumping;
     private bool _isGrounded = true;
     private float _timeInAir = 0;
+    private float _originalMoveSpeed;
 
     private void Awake() {
         _rb2d = GetComponent<Rigidbody2D>();
+        _originalMoveSpeed = _moveSpeed;
     }
 
     private void Update()
@@ -41,8 +44,12 @@ public class PlayerMovement : MonoBehaviour
         if (_isJumping)
         {
             _isJumping = false;
+            SetPlatformMode(false);
             _timeInAir = 0;
             _rb2d.AddForce(Vector2.up * _jumpHeight, ForceMode2D.Impulse);
+        } else if (!_isGrounded)
+        {
+            SetPlatformMode(false);
         }
 
         _direction.y = _rb2d.velocity.y;
@@ -63,11 +70,36 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundDetection()
     {
-        Collider2D _groundDetector =
+        Collider2D groundDetector =
             Physics2D.OverlapCircle(_floorDetector.position, _groundDetectorRadius, _groundLayerMask);
 
-        _isGrounded = _groundDetector != null;
+        _isGrounded = groundDetector != null;
     }
+
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Platform"))
+        {
+            SetPlatformMode(true, other.transform);
+        }
+    }
+
+    public void SetPlatformMode(bool isPlatform, Transform platform = null)
+    {
+        if (isPlatform)
+        {
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            transform.parent = platform;
+            _moveSpeed = _platformMoveSpeed;
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().isKinematic = false;
+            transform.parent = null;
+            _moveSpeed = _originalMoveSpeed;
+        }
+    }
+
 
     private void OnDrawGizmos()
     {
