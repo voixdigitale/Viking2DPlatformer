@@ -8,6 +8,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private ParticleSystem _runParticles;
+    [SerializeField] private GameObject _jumpVFX;
 
     PlayerMovement _movement;
     AxeThrow _axeThrow;
@@ -62,6 +63,10 @@ public class PlayerAnimation : MonoBehaviour
 
     private void SetJump(bool isJumping) {
         _animator.SetBool("isJumping", isJumping);
+        if (isJumping)
+        {
+            Instantiate(_jumpVFX, transform.position, Quaternion.identity);
+        }
     }
 
     private void SetAiming(bool isAiming) {

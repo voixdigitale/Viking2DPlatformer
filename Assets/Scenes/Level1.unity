@@ -1315,7 +1315,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.7719555, y: -8.000008, z: 0.18836594}
+  m_LocalPosition: {x: 6.2288337, y: -8.000008, z: 0.18836594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54653,6 +54653,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202010032625921498, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
+      propertyPath: _jumpVFX
+      value: 
+      objectReference: {fileID: 3194967852422245800, guid: 581e4ba25da92504399e7a850d691ca4, type: 3}
     - target: {fileID: 6202010032625921498, guid: 24df56ee59dcf8a44875bd1600b9e87c, type: 3}
       propertyPath: _runParticles
       value: 
