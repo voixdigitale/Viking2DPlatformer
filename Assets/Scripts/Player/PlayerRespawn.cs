@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    [SerializeField] private Vector2 startingPos;
+    [SerializeField] private Vector2 _startingPos;
+    [SerializeField] private float _respawnDelay;
+    [SerializeField] private GameObject _model;
+    [SerializeField] private GameObject _deathVFX;
 
     private PlayerMovement _movement;
 
@@ -24,7 +27,16 @@ public class PlayerRespawn : MonoBehaviour
 
     private void Respawn()
     {
+        Instantiate(_deathVFX, transform.position, Quaternion.identity);
+        _model.SetActive(false);
+        StartCoroutine(BackToStart());        
+    }
+
+    private IEnumerator BackToStart() {
+        yield return new WaitForSeconds(_respawnDelay);
+
+        _model.SetActive(true);
         _movement.SetPlatformMode(false);
-        transform.position = startingPos;
+        transform.position = _startingPos;
     }
 }

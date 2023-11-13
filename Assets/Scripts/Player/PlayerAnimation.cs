@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.Android;
 using UnityEngine.Tilemaps;
 
@@ -8,10 +9,14 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private ParticleSystem _runParticles;
-    [SerializeField] private GameObject _jumpVFX;
+    [SerializeField] private ParticleSystem _jumpVFX;
+    [SerializeField] private float _yLandVelocityCheck = -10f;
 
     PlayerMovement _movement;
     AxeThrow _axeThrow;
+    Vector2 _velocityBeforePhysicsUpdate;
+    Rigidbody2D _rb2d;
+    CinemachineImpulseSource _impulseSource;
     private float _moveSpeedX;
     private bool _isGrounded;
     private bool _isJumping;
@@ -20,11 +25,24 @@ public class PlayerAnimation : MonoBehaviour
     private void Awake() {
         _movement = GetComponent<PlayerMovement>();
         _axeThrow = GetComponent<AxeThrow>();
+        _rb2d = GetComponent<Rigidbody2D>();
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
+    }
+
+    private void FixedUpdate() {
+        _velocityBeforePhysicsUpdate = _rb2d.velocity;
     }
 
     private void Update() {
         GetValues();
         Animate();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (_velocityBeforePhysicsUpdate.y < _yLandVelocityCheck) {
+            PlayJumpDust();
+            _impulseSource.GenerateImpulse();
+        }
     }
 
     private void GetValues() {
@@ -65,7 +83,7 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetBool("isJumping", isJumping);
         if (isJumping)
         {
-            Instantiate(_jumpVFX, transform.position, Quaternion.identity);
+            PlayJumpDust();
         }
     }
 
@@ -79,5 +97,8 @@ public class PlayerAnimation : MonoBehaviour
         } else if (x > 0) {
             _animator.transform.localScale = new Vector3(1f, 1f, 1f);
         }
+    }
+    private void PlayJumpDust() {
+        _jumpVFX.Play();
     }
 }

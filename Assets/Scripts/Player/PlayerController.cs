@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour {
         GatherInput();
         Movement();
         Jumping();
-        Attacking();
         Aiming();
         Throwing();
     }
@@ -46,14 +45,5 @@ public class PlayerController : MonoBehaviour {
     private void Throwing() {
         if (_frameInput.ReleaseAttack)
             _axeThrow.Throw();
-    }
-
-    private void Attacking() {
-        //if (_frameInput.Attack) { }
-        
-        /*
-        if (_frameInput.Attack && _animator.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Smash") {
-            _animator.SetTrigger("Attack");
-        }*/
     }
 }
