@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,11 +6,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public static Action OnJump;
+
     private PlayerInput _playerInput;
     private FrameInput _frameInput;
     private PlayerMovement _movement;
     private AxeThrow _axeThrow;
-
 
     private void Awake() {
         _playerInput = GetComponent<PlayerInput>();
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Jumping() {
-        if (_frameInput.Jump) _movement.Jump();
+        if (_frameInput.Jump) OnJump?.Invoke();
     }
 
     private void Aiming() {
@@ -46,4 +48,5 @@ public class PlayerController : MonoBehaviour {
         if (_frameInput.ReleaseAttack)
             _axeThrow.Throw();
     }
+
 }

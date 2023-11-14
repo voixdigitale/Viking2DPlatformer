@@ -8,25 +8,33 @@ public class PlayerMovement : MonoBehaviour
 {
     public float GetMoveX() => _direction.x;
     public bool GetJump() => _isJumping;
-    public bool GetGround() => _isGrounded;
+    public bool GetGround() => DetectGround();
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _platformMoveSpeed;
     [SerializeField] private float _jumpHeight;
+    [SerializeField] private float _coyoteTime;
     [SerializeField] private float _fallMultiplier;
     [SerializeField] private float _gravityDelay;
     [SerializeField] private LayerMask _groundLayerMask;
     [SerializeField] private Transform _floorDetector;
     [SerializeField] private float _groundDetectorRadius;
 
-    private PlayerAnimation _animation;
-
     private Rigidbody2D _rb2d;
     private Vector2 _direction;
-    private bool _isJumping;
-    private bool _isGrounded = true;
+    public bool _isJumping;
     private float _timeInAir = 0;
     private float _originalMoveSpeed;
+    public float _coyoteTimer;
+    private bool _detectorDisabled;
+
+    private void OnEnable() {
+        PlayerController.OnJump += Jump;
+    }
+
+    private void OnDisable() {
+        PlayerController.OnJump -= Jump;
+    }
 
     private void Awake() {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -35,20 +43,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        GroundDetection();
+        CoyoteTimer();
         GravityDelay();
     }
 
     private void FixedUpdate()
     {
-        if (_isJumping)
-        {
-            _isJumping = false;
-            SetPlatformMode(false);
-            _timeInAir = 0;
-            _rb2d.AddForce(Vector2.up * _jumpHeight, ForceMode2D.Impulse);
-        } else if (!_isGrounded)
-        {
+        if (!DetectGround()) {
             SetPlatformMode(false);
         }
 
@@ -58,22 +59,41 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Jump() {
-        if (_isGrounded && !_isJumping) {
-            _isGrounded = false;
-            _isJumping = true;
+        if (_coyoteTimer > 0f && !_isJumping) {
+            _detectorDisabled = true;
+            StartCoroutine(EnableDetector());
+            ApplyJumpForce();
         }
+    }
+
+    private IEnumerator EnableDetector() {
+        yield return new WaitForSeconds(.2f);
+
+        _detectorDisabled = false;
+    }
+
+    public void ApplyJumpForce() {
+        _isJumping = true;
+        SetPlatformMode(false);
+        _timeInAir = 0;
+        _coyoteTimer = 0f;
+        _rb2d.velocity = Vector2.zero;
+        _rb2d.AddForce(Vector2.up * _jumpHeight, ForceMode2D.Impulse);
     }
 
     public void SetDirectionX(float x) {
         _direction.x = x * _moveSpeed;
     }
 
-    private void GroundDetection()
+    private bool DetectGround()
     {
+        if (_detectorDisabled)
+            return false;
+
         Collider2D groundDetector =
             Physics2D.OverlapCircle(_floorDetector.position, _groundDetectorRadius, _groundLayerMask);
 
-        _isGrounded = groundDetector != null;
+        return groundDetector != null;
     }
 
     void OnCollisionStay2D(Collision2D other)
@@ -103,13 +123,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = _isGrounded ? Color.green : Color.red;
+        Gizmos.color = DetectGround() ? Color.green : Color.red;
         Gizmos.DrawWireSphere(_floorDetector.position, _groundDetectorRadius);
     }
 
 
     private void GravityDelay() {
-        if (!_isGrounded) {
+        if (!DetectGround()) {
             _timeInAir += Time.deltaTime;
         } else {
             _timeInAir = 0f;
@@ -119,6 +139,17 @@ public class PlayerMovement : MonoBehaviour
     private void ExtraGravity() {
         if (_timeInAir > _gravityDelay) {
             _rb2d.AddForce(new Vector2(0f, -_fallMultiplier * Time.deltaTime));
+        }
+    }
+
+    private void CoyoteTimer() {
+        if (DetectGround()) {
+            _coyoteTimer = _coyoteTime;
+            if (_isJumping) {
+                _isJumping = false;
+            }
+        } else {
+            _coyoteTimer -= Time.deltaTime;
         }
     }
 }

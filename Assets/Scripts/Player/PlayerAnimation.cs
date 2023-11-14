@@ -22,6 +22,14 @@ public class PlayerAnimation : MonoBehaviour
     private bool _isJumping;
     private bool _isAiming;
 
+    private void OnEnable() {
+        PlayerController.OnJump += PlayJumpParticles;
+    }
+
+    private void OnDisable() {
+        PlayerController.OnJump -= PlayJumpParticles;
+    }
+
     private void Awake() {
         _movement = GetComponent<PlayerMovement>();
         _axeThrow = GetComponent<AxeThrow>();
@@ -40,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (_velocityBeforePhysicsUpdate.y < _yLandVelocityCheck) {
-            PlayJumpDust();
+            PlayJumpParticles();
             _impulseSource.GenerateImpulse();
         }
     }
@@ -81,10 +89,6 @@ public class PlayerAnimation : MonoBehaviour
 
     private void SetJump(bool isJumping) {
         _animator.SetBool("isJumping", isJumping);
-        if (isJumping)
-        {
-            PlayJumpDust();
-        }
     }
 
     private void SetAiming(bool isAiming) {
@@ -98,7 +102,9 @@ public class PlayerAnimation : MonoBehaviour
             _animator.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
-    private void PlayJumpDust() {
-        _jumpVFX.Play();
+    private void PlayJumpParticles() {
+        if(!_isJumping) {
+            _jumpVFX.Play();
+        }
     }
 }
