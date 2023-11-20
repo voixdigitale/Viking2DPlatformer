@@ -8,10 +8,13 @@ public class PlayerController : MonoBehaviour {
 
     public static Action OnJump;
 
+    [SerializeField] UIManager _uiManager;
+
     private PlayerInput _playerInput;
     private FrameInput _frameInput;
     private PlayerMovement _movement;
     private AxeThrow _axeThrow;
+    
 
     private void Awake() {
         _playerInput = GetComponent<PlayerInput>();
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour {
         Jumping();
         Aiming();
         Throwing();
+        Pause();
     }
 
     private void GatherInput() {
@@ -47,6 +51,21 @@ public class PlayerController : MonoBehaviour {
     private void Throwing() {
         if (_frameInput.ReleaseAttack)
             _axeThrow.Throw();
+    }
+
+    private void Pause()
+    {
+        if (_frameInput.Pause)
+        {
+            if (!_uiManager.IsPaused)
+            {
+                _uiManager.Pause();
+            }
+            else
+            {
+                _uiManager.Resume();
+            }
+        }
     }
 
 }

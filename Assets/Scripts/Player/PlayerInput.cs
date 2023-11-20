@@ -17,7 +17,8 @@ public class PlayerInput : MonoBehaviour
             AimShot = Input.GetAxis("Vertical"),
             Jump = Input.GetButtonDown("Jump"),
             Attack = Input.GetButton("Fire1"),
-            ReleaseAttack = Input.GetButtonUp("Fire1")
+            ReleaseAttack = Input.GetButtonUp("Fire1"),
+            Pause = Input.GetButtonUp("Cancel")
         };
     }
 }
